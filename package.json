@@ -1,7 +1,7 @@
 {
   "name": "ui-lab",
   "version": "1.0.0",
-  "description": "Motion patterns for React, each one small enough to copy: shared layout, presence, springs, drag and scroll-linked animation.",
+  "description": "Six animation patterns for React built with Motion: shared layout tabs, enter and exit, drag with a spring, a number ticker, expanding rows and scroll progress. Each is one file, keyboard accessible and respects reduced motion.",
   "private": true,
   "type": "module",
   "scripts": {
