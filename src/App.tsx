@@ -31,7 +31,7 @@ function Demo({ n, title, trick, children }: DemoProps) {
       transition={{ type: 'spring', stiffness: 200, damping: 26 }}
       className="rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm dark:border-zinc-800 dark:bg-zinc-900/60"
     >
-      <p className="font-mono text-xs text-zinc-500">0{n}</p>
+      <p className="font-mono text-xs text-zinc-500 dark:text-zinc-400">0{n}</p>
       <h2 id={`demo-${n}`} className="mt-1 text-lg font-semibold tracking-tight">{title}</h2>
       <p className="mt-1 mb-5 text-sm text-zinc-600 dark:text-zinc-400">{trick}</p>
       <div>{children}</div>
@@ -92,7 +92,7 @@ export default function App() {
       </main>
 
       <footer className="mx-auto max-w-5xl px-4 sm:px-6">
-        <p className="border-t border-zinc-200 py-8 text-sm text-zinc-500 dark:border-zinc-800">
+        <p className="border-t border-zinc-200 py-8 text-sm text-zinc-500 dark:border-zinc-800 dark:text-zinc-400">
         Built by <a className="font-medium text-violet-700 hover:underline dark:text-violet-300" href="https://github.com/umer-78">Umer Hashmi</a> with
         React, <a className="font-medium text-violet-700 hover:underline dark:text-violet-300" href="https://motion.dev">Motion</a> and Tailwind CSS. MIT licensed.
         </p>

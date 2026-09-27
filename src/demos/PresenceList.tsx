@@ -49,7 +49,7 @@ export function PresenceList() {
           ))}
         </AnimatePresence>
       </ul>
-      {items.length === 0 && <p className="mt-3 text-sm text-zinc-500">Empty. Add something.</p>}
+      {items.length === 0 && <p className="mt-3 text-sm text-zinc-500 dark:text-zinc-400">Empty. Add something.</p>}
     </div>
   );
 }
