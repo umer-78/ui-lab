@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
 import { motion, type Variants } from 'motion/react';
+import { Hero3D } from './Hero3D';
 import { Accordion } from './demos/Accordion';
 import { NumberTicker } from './demos/NumberTicker';
 import { PresenceList } from './demos/PresenceList';
@@ -43,7 +44,9 @@ export default function App() {
   return (
     <>
       <ScrollProgress />
-      <header className="mx-auto max-w-5xl px-4 pt-20 pb-12 sm:px-6">
+      <div className="relative overflow-hidden">
+      <Hero3D />
+      <header className="relative z-10 mx-auto max-w-5xl px-4 pt-20 pb-12 sm:px-6">
         <motion.div variants={stagger} initial="hidden" animate="show">
           <motion.p variants={rise} className="inline-flex rounded-full border border-violet-200 bg-violet-50 px-3 py-1 text-xs font-semibold tracking-wide text-violet-700 uppercase dark:border-violet-900 dark:bg-violet-950 dark:text-violet-300">
             React · Motion · Tailwind
@@ -51,7 +54,7 @@ export default function App() {
           <motion.h1 variants={rise} className="mt-4 text-4xl font-bold tracking-tight text-balance sm:text-5xl">
             UI Lab
           </motion.h1>
-          <motion.p variants={rise} className="mt-4 max-w-2xl text-lg text-pretty text-zinc-600 dark:text-zinc-400">
+          <motion.p variants={rise} data-hero-text className="mt-4 max-w-2xl text-lg text-pretty text-zinc-600 dark:text-zinc-400">
             Six animation patterns, each small enough to copy into a project. Every one works with a
             keyboard, and all of them calm down when your system asks for reduced motion.
           </motion.p>
@@ -65,6 +68,7 @@ export default function App() {
           </motion.nav>
         </motion.div>
       </header>
+      </div>
 
       <main className="mx-auto grid max-w-5xl gap-5 px-4 pb-16 sm:px-6 md:grid-cols-2">
         <Demo n={1} title="Shared layout tabs" trick={<>One highlight with a <code>layoutId</code> springs between tabs.</>}>

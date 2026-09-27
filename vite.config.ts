@@ -9,6 +9,8 @@ import { fileURLToPath, URL } from 'node:url';
 export default defineConfig(({ command }) => ({
   base: command === 'build' ? '/ui-lab/' : '/',
   plugins: [react(), tailwindcss()],
+  // three.js (the header's 3D scene) is its own chunk, loaded after first paint; it is bigger than Vite's default warning size
+  build: { chunkSizeWarningLimit: 600 },
   // "@/" is the import root 21st.dev and shadcn-style components expect.
   resolve: { alias: { '@': fileURLToPath(new URL('./src', import.meta.url)) } },
   test: {

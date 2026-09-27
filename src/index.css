@@ -9,3 +9,10 @@
 body { @apply bg-zinc-50 text-zinc-900 antialiased dark:bg-zinc-950 dark:text-zinc-100; }
 :focus-visible { @apply outline-2 outline-offset-2 outline-violet-600 dark:outline-violet-400; }
 code { @apply rounded bg-zinc-100 px-1.5 py-0.5 font-mono text-[0.85em] text-violet-700 dark:bg-zinc-800 dark:text-violet-300; }
+
+/* The header's 3D scene (src/lib/labScene.ts): behind the text, fading in once drawn */
+.lab-3d { position: absolute; inset: 0; z-index: 0; pointer-events: none; opacity: 0; transition: opacity 1.2s ease; }
+.lab-3d.on { opacity: 1; }
+.lab-3d.narrow.on { opacity: 0.4; }
+.lab-3d canvas { display: block; width: 100%; height: 100%; }
+@media (prefers-reduced-motion: reduce) { .lab-3d { transition: none; } }

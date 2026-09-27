@@ -51,6 +51,9 @@ src/lib/logic.ts   every decision that is not animation: tab keys, list ids,
                    number formatting, drag bounds. No React, no DOM.
 src/demos/         one file per pattern
 src/App.tsx        the page
+src/Hero3D.tsx     loads the header's 3D scene after first paint, if WebGL is there
+src/lib/labScene.ts  that scene: six panels, one per pattern, on springs; click one
+                   to jump to its demo
 src/test/          vitest + Testing Library
 ```
 
@@ -89,9 +92,10 @@ npm i -g @21st-dev/cli
 
 ## Bundle size
 
-Measured with `npm run build`: 122.1 kB of gzipped JavaScript. React 19 and the
-full `motion` component make up most of it, which is fine for a gallery of
-animations. For an app where animation is a detail rather than the point, load
+Measured with `npm run build`: 122.84 kB of gzipped JavaScript for the page. React 19
+and the full `motion` component make up most of it, which is fine for a gallery of
+animations. The header's 3D scene is another 135.21 kB (three.js), split into its
+own chunk and loaded only after the page has painted. For an app where animation is a detail rather than the point, load
 Motion through `LazyMotion` instead, as
 [task-board](https://github.com/umer-78/task-board) does.
 
